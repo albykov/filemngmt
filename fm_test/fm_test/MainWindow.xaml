@@ -1,16 +1,24 @@
-﻿<Window x:Class="fm_test.MainWindow"
+﻿<Window x:Name="mainWindow" x:Class="fm_test.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:fm_test"
         mc:Ignorable="d"
-        Title="MainWindow" Height="316.667" Width="643.627">
-    <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.41,-5.339" Height="150" Width="615">
+        Title="MainWindow" Height="228.852" Width="643.627">
+    <Grid>
+    <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.41,-5.339" Height="150" Width="615" IsReadOnly="True">
+
         <DataGrid.Columns>
-            <DataGridTextColumn Header="Test" Binding="{Binding _name}" Width="*"/>
-            <DataGridTextColumn Header="SD" Binding="{Binding sync_direction}" Width="*"/>
+            <!--<DataGridTextColumn Header="Test" Binding="{Binding _name}" Width="*"/>
+            <DataGridTextColumn Header="SD" Binding="{Binding sync_direction}" Width="*"/>-->
+            <DataGridTextColumn Header="ID" Width="50" Binding="{Binding task_id}"/>
+            <DataGridTextColumn Header="Type" Width="100" Binding="{Binding task_type}"/>
+            <DataGridTextColumn Header="Create DT" Width="150" Binding="{Binding dt_from}"/>
+            <DataGridTextColumn Header="Status" Width="50" Binding="{Binding task_state}"/>
         </DataGrid.Columns>
     </DataGrid>
+        <Button x:Name="new_task_btn" Content="Add New Task" HorizontalAlignment="Left" Margin="10,168,0,0" VerticalAlignment="Top" Width="85" Click="new_task_btn_Click"/>
 
+    </Grid>
 </Window>

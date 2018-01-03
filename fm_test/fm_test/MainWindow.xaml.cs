@@ -24,19 +24,19 @@ namespace fm_test
         {
             InitializeComponent();
 
-            GeneralTask testy = new GeneralTask();
-            testy.file_from = "from";
-            testy.file_to = "to";
-            testy._name = "name";
-            testy.task_state = TaskState.NEW;
+            //SyncTaskClass task1 = new SyncTaskClass();
+            //ZipTaskClass task2 = new ZipTaskClass();
 
-            dataGrid.Items.Add(testy);
+            //task1.task_id = dataGrid.Items.Add(task1);
+            //task2.task_id = dataGrid.Items.Add(task2);
+        }
 
-            SyncTaskClass test2 = new SyncTaskClass();
-            test2._name = "test22";
-            test2.sync_direction = SyncDirection.BOTH;
-            dataGrid.Items.Add(test2);
-            //dataGrid.UpdateLayout();
+        private void new_task_btn_Click(object sender, RoutedEventArgs e)
+        {
+            TaskInfoWindow tiw = new TaskInfoWindow(this);
+            tiw.Left = this.Left + (this.Width - this.ActualWidth) / 2;
+            tiw.Top = this.Top + (this.Height - this.ActualHeight) / 2;
+            tiw.ShowDialog();
         }
     }
 }
