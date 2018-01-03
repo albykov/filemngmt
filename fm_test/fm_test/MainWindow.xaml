@@ -6,7 +6,11 @@
         xmlns:local="clr-namespace:fm_test"
         mc:Ignorable="d"
         Title="MainWindow" Height="316.667" Width="643.627">
-    <Grid>
+    <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.41,-5.339" Height="150" Width="615">
+        <DataGrid.Columns>
+            <DataGridTextColumn Header="Test" Binding="{Binding _name}" Width="*"/>
+            <DataGridTextColumn Header="SD" Binding="{Binding sync_direction}" Width="*"/>
+        </DataGrid.Columns>
+    </DataGrid>
 
-    </Grid>
 </Window>

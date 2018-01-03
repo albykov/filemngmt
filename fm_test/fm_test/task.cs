@@ -13,7 +13,7 @@ namespace fm_test
 
     class GeneralTask
     {
-        public string name;
+        public string _name { get; set; }
         public TaskState task_state = TaskState.NEW;
 
         private DateTime _dt_from = DateTime.UtcNow;
@@ -28,10 +28,8 @@ namespace fm_test
 
         private int _priority = 0;
         public int priority {
-            get
-            { return _priority; }
-            set
-            { _priority = value; }
+            get { return _priority; }
+            set { _priority = value; }
         }
 
     }
@@ -48,6 +46,10 @@ namespace fm_test
 
     class SyncTaskClass : GeneralTask
     {
-        public SyncDirection sync_dir = SyncDirection.CHECK_FIRST;
+        private SyncDirection _sync_direction = SyncDirection.CHECK_FIRST;
+        public SyncDirection sync_direction {
+            get { return _sync_direction; }
+            set { _sync_direction = value; }
+        }
     }
 }

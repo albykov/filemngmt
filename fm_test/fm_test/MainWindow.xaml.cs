@@ -25,6 +25,18 @@ namespace fm_test
             InitializeComponent();
 
             GeneralTask testy = new GeneralTask();
+            testy.file_from = "from";
+            testy.file_to = "to";
+            testy._name = "name";
+            testy.task_state = TaskState.NEW;
+
+            dataGrid.Items.Add(testy);
+
+            SyncTaskClass test2 = new SyncTaskClass();
+            test2._name = "test22";
+            test2.sync_direction = SyncDirection.BOTH;
+            dataGrid.Items.Add(test2);
+            //dataGrid.UpdateLayout();
         }
     }
 }
